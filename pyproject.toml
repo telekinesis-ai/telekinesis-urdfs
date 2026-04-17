@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telekinesis-synapse-robot-data"
+version = "0.1.0"
+description = "Robot model data and lightweight loaders for telekinesis-synapse."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+authors = [{ name = "Telekinesis" }]
+dependencies = []
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+synapse_robot_data = ["models/**/*"]

@@ -1,0 +1,9 @@
+# Python packaging artifacts
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# Python cache
+__pycache__/
+*.py[cod]
