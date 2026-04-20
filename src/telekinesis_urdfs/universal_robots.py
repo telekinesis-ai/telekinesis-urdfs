@@ -1,7 +1,11 @@
-from synapse_robot_data.loaders.robots._base_loader import RobotLoader
+"""RobotLoader subclasses for Universal Robots collaborative arms."""
+
+from .utils import RobotLoader
 
 
 class UR3Loader(RobotLoader):
+    """Loader for the Universal Robots UR3 collaborative arm."""
+
     robot_name = "ur3"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur3.urdf"
@@ -12,6 +16,8 @@ class UR3Loader(RobotLoader):
 
 
 class UR5Loader(RobotLoader):
+    """Loader for the Universal Robots UR5 collaborative arm."""
+
     robot_name = "ur5"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur5.urdf"
@@ -22,6 +28,8 @@ class UR5Loader(RobotLoader):
 
 
 class UR10Loader(RobotLoader):
+    """Loader for the Universal Robots UR10 collaborative arm."""
+
     robot_name = "ur10"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur10.urdf"
@@ -32,6 +40,8 @@ class UR10Loader(RobotLoader):
 
 
 class UR10eLoader(RobotLoader):
+    """Loader for the Universal Robots UR10e collaborative arm."""
+
     robot_name = "ur10e"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur10e.urdf"
@@ -42,6 +52,8 @@ class UR10eLoader(RobotLoader):
 
 
 class UR3eLoader(RobotLoader):
+    """Loader for the Universal Robots UR3e collaborative arm."""
+
     robot_name = "ur3e"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur3e.urdf"
@@ -52,6 +64,8 @@ class UR3eLoader(RobotLoader):
 
 
 class UR5eLoader(RobotLoader):
+    """Loader for the Universal Robots UR5e collaborative arm."""
+
     robot_name = "ur5e"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur5e.urdf"
@@ -62,6 +76,8 @@ class UR5eLoader(RobotLoader):
 
 
 class UR7eLoader(RobotLoader):
+    """Loader for the Universal Robots UR7e collaborative arm."""
+
     robot_name = "ur7e"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur7e.urdf"
@@ -72,6 +88,8 @@ class UR7eLoader(RobotLoader):
 
 
 class UR12eLoader(RobotLoader):
+    """Loader for the Universal Robots UR12e collaborative arm."""
+
     robot_name = "ur12e"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur12e.urdf"
@@ -82,6 +100,8 @@ class UR12eLoader(RobotLoader):
 
 
 class UR15Loader(RobotLoader):
+    """Loader for the Universal Robots UR15 collaborative arm."""
+
     robot_name = "ur15"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur15.urdf"
@@ -92,6 +112,8 @@ class UR15Loader(RobotLoader):
 
 
 class UR16eLoader(RobotLoader):
+    """Loader for the Universal Robots UR16e collaborative arm."""
+
     robot_name = "ur16e"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur16e.urdf"
@@ -102,6 +124,8 @@ class UR16eLoader(RobotLoader):
 
 
 class UR20Loader(RobotLoader):
+    """Loader for the Universal Robots UR20 collaborative arm."""
+
     robot_name = "ur20"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur20.urdf"
@@ -112,6 +136,8 @@ class UR20Loader(RobotLoader):
 
 
 class UR30Loader(RobotLoader):
+    """Loader for the Universal Robots UR30 collaborative arm."""
+
     robot_name = "ur30"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur30.urdf"
@@ -122,6 +148,8 @@ class UR30Loader(RobotLoader):
 
 
 class UR3GripperLoader(RobotLoader):
+    """Loader for the UR3 with gripper SRDF configuration."""
+
     robot_name = "ur3_gripper"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur3.urdf"
@@ -132,6 +160,8 @@ class UR3GripperLoader(RobotLoader):
 
 
 class UR5GripperLoader(RobotLoader):
+    """Loader for the UR5 with gripper SRDF configuration."""
+
     robot_name = "ur5_gripper"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur5.urdf"
@@ -142,6 +172,8 @@ class UR5GripperLoader(RobotLoader):
 
 
 class UR5JointLimitedLoader(RobotLoader):
+    """Loader for the UR5 with joint-limited SRDF."""
+
     robot_name = "ur5_joint_limited_robot"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur5.urdf"
@@ -152,6 +184,8 @@ class UR5JointLimitedLoader(RobotLoader):
 
 
 class UR5Robotiq2F85Loader(RobotLoader):
+    """Loader for the UR5 with Robotiq 2F-85 gripper."""
+
     robot_name = "ur5_robotiq_2f_85"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur5_robotiq_2f_85.urdf"
@@ -162,6 +196,8 @@ class UR5Robotiq2F85Loader(RobotLoader):
 
 
 class UR10eFactoryCalibrationLoader(RobotLoader):
+    """Loader for UR10e with factory calibration URDF."""
+
     robot_name = "ur10e_factory_calibration"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur10e_factory_calibration.urdf"
@@ -172,6 +208,8 @@ class UR10eFactoryCalibrationLoader(RobotLoader):
 
 
 class UR10eNewFactoryCalibrationLoader(RobotLoader):
+    """Loader for UR10e with updated factory calibration."""
+
     robot_name = "ur10e_new_factory_calibration"
     robot_subdir = "universal_robots"
     urdf_relpath = "urdf/ur10e_new_factory_calibration.urdf"
