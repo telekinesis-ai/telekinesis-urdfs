@@ -149,8 +149,9 @@ Artifacts per branch:
 - Main — PyPI package `telekinesis-urdfs:<version>`
 
 ## Deployment
+**CI is already setup for this package**
 
-Below steps are for **manual** deployment. With CI, ignore the below.
+Below steps are for **manual** deployment. With CI, ignore the below and refer to the CI setup in Release Management in Telekinesis Archiecture Documentation.
 
 ### Build Package
 
