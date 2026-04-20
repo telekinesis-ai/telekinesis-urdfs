@@ -1,0 +1,548 @@
+Abb CRB15000595:
+  company: abb
+  model: crb15000595
+  robot_type: manipulators
+Abb IRB120 T358:
+  company: abb
+  model: irb120t358
+  robot_type: manipulators
+Abb IRB1200590:
+  company: abb
+  model: irb1200590
+  robot_type: manipulators
+Abb IRB1200770:
+  company: abb
+  model: irb1200770
+  robot_type: manipulators
+Abb IRB120358:
+  company: abb
+  model: irb120358
+  robot_type: manipulators
+Abb IRB1600612:
+  company: abb
+  model: irb1600612
+  robot_type: manipulators
+Abb IRB16008145:
+  company: abb
+  model: irb16008145
+  robot_type: manipulators
+Abb IRB2400:
+  company: abb
+  model: irb2400
+  robot_type: manipulators
+Abb IRB260012165:
+  company: abb
+  model: irb260012165
+  robot_type: manipulators
+Abb IRB4400 L30243:
+  company: abb
+  model: irb4400l30243
+  robot_type: manipulators
+Abb IRB460020250:
+  company: abb
+  model: irb460020250
+  robot_type: manipulators
+Abb IRB460040255:
+  company: abb
+  model: irb460040255
+  robot_type: manipulators
+Abb IRB460060205:
+  company: abb
+  model: irb460060205
+  robot_type: manipulators
+Abb IRB527120:
+  company: abb
+  model: irb527120
+  robot_type: manipulators
+Abb IRB527145:
+  company: abb
+  model: irb527145
+  robot_type: manipulators
+Abb IRB5400:
+  company: abb
+  model: irb5400
+  robot_type: manipulators
+Abb IRB6600:
+  company: abb
+  model: irb6600
+  robot_type: manipulators
+Abb IRB6640185280:
+  company: abb
+  model: irb6640185280
+  robot_type: manipulators
+Abb IRB6650 S125350:
+  company: abb
+  model: irb6650s125350
+  robot_type: manipulators
+Abb IRB6650 S90390:
+  company: abb
+  model: irb6650s90390
+  robot_type: manipulators
+Abb IRB6700200260:
+  company: abb
+  model: irb6700200260
+  robot_type: manipulators
+Abb IRB6700235265:
+  company: abb
+  model: irb6700235265
+  robot_type: manipulators
+Abb IRB7600150350:
+  company: abb
+  model: irb7600150350
+  robot_type: manipulators
+Agibot X1:
+  company: agibot
+  model: x1
+  robot_type: humanoids
+Agility Robotics Digit:
+  company: agilityrobotics
+  model: digit
+  robot_type: humanoids
+Agility Robotics Digit Model:
+  company: agilityrobotics
+  model: digitmodel
+  robot_type: humanoids
+Anybotics Anymal:
+  company: anybotics
+  model: anymal
+  robot_type: quadrupeds
+Bitcraze CF2 P:
+  company: bitcraze
+  model: cf2p
+  robot_type: drones
+Bitcraze CF2 X:
+  company: bitcraze
+  model: cf2x
+  robot_type: drones
+Bitcraze Racer:
+  company: bitcraze
+  model: racer
+  robot_type: drones
+Boston Dynamics Spot:
+  company: bostondynamics
+  model: spot
+  robot_type: quadrupeds
+Boston Dynamics Spot With Arm:
+  company: bostondynamics
+  model: spotwitharm
+  robot_type: quadrupeds
+Clearpath Husky:
+  company: clearpath
+  model: husky
+  robot_type: amrs
+Custom Mobile Robot:
+  company: custom
+  model: mobilerobot
+  robot_type: amrs
+Fanuc CR35 IA:
+  company: fanuc
+  model: cr35ia
+  robot_type: manipulators
+Fanuc CR7 IA:
+  company: fanuc
+  model: cr7ia
+  robot_type: manipulators
+Fanuc CR7 IAL:
+  company: fanuc
+  model: cr7ial
+  robot_type: manipulators
+Fanuc CRX10 IAL:
+  company: fanuc
+  model: crx10ial
+  robot_type: manipulators
+Fanuc LRMATE200 I:
+  company: fanuc
+  model: lrmate200i
+  robot_type: manipulators
+Fanuc LRMATE200 IB:
+  company: fanuc
+  model: lrmate200ib
+  robot_type: manipulators
+Fanuc LRMATE200 IB3 L:
+  company: fanuc
+  model: lrmate200ib3l
+  robot_type: manipulators
+Fanuc LRMATE200 IC:
+  company: fanuc
+  model: lrmate200ic
+  robot_type: manipulators
+Fanuc LRMATE200 IC5 F:
+  company: fanuc
+  model: lrmate200ic5f
+  robot_type: manipulators
+Fanuc LRMATE200 IC5 H:
+  company: fanuc
+  model: lrmate200ic5h
+  robot_type: manipulators
+Fanuc LRMATE200 IC5 HS:
+  company: fanuc
+  model: lrmate200ic5hs
+  robot_type: manipulators
+Fanuc LRMATE200 IC5 L:
+  company: fanuc
+  model: lrmate200ic5l
+  robot_type: manipulators
+Fanuc LRMATE200 ID:
+  company: fanuc
+  model: lrmate200id
+  robot_type: manipulators
+Fanuc LRMATE200 ID4 S:
+  company: fanuc
+  model: lrmate200id4s
+  robot_type: manipulators
+Fanuc LRMATE200 ID4 SC:
+  company: fanuc
+  model: lrmate200id4sc
+  robot_type: manipulators
+Fanuc LRMATE200 ID4 SH:
+  company: fanuc
+  model: lrmate200id4sh
+  robot_type: manipulators
+Fanuc LRMATE200 ID7 H:
+  company: fanuc
+  model: lrmate200id7h
+  robot_type: manipulators
+Fanuc LRMATE200 ID7 L:
+  company: fanuc
+  model: lrmate200id7l
+  robot_type: manipulators
+Fanuc LRMATE200 ID7 LC:
+  company: fanuc
+  model: lrmate200id7lc
+  robot_type: manipulators
+Fanuc M10 IA:
+  company: fanuc
+  model: m10ia
+  robot_type: manipulators
+Fanuc M10 IA7 L:
+  company: fanuc
+  model: m10ia7l
+  robot_type: manipulators
+Fanuc M16 IB20:
+  company: fanuc
+  model: m16ib20
+  robot_type: manipulators
+Fanuc M20 IA:
+  company: fanuc
+  model: m20ia
+  robot_type: manipulators
+Fanuc M20 IA10 L:
+  company: fanuc
+  model: m20ia10l
+  robot_type: manipulators
+Fanuc M20 IB25:
+  company: fanuc
+  model: m20ib25
+  robot_type: manipulators
+Fanuc M430 IA2 F:
+  company: fanuc
+  model: m430ia2f
+  robot_type: manipulators
+Fanuc M430 IA2 P:
+  company: fanuc
+  model: m430ia2p
+  robot_type: manipulators
+Fanuc M6 IB:
+  company: fanuc
+  model: m6ib
+  robot_type: manipulators
+Fanuc M6 IB6 S:
+  company: fanuc
+  model: m6ib6s
+  robot_type: manipulators
+Fanuc M710 IC45 M:
+  company: fanuc
+  model: m710ic45m
+  robot_type: manipulators
+Fanuc M710 IC50:
+  company: fanuc
+  model: m710ic50
+  robot_type: manipulators
+Fanuc M900 IA260 L:
+  company: fanuc
+  model: m900ia260l
+  robot_type: manipulators
+Fanuc M900 IB700:
+  company: fanuc
+  model: m900ib700
+  robot_type: manipulators
+Fanuc R1000 IA80 F:
+  company: fanuc
+  model: r1000ia80f
+  robot_type: manipulators
+Fanuc R2000 IB210 F:
+  company: fanuc
+  model: r2000ib210f
+  robot_type: manipulators
+Fanuc R2000 IC125 L:
+  company: fanuc
+  model: r2000ic125l
+  robot_type: manipulators
+Fanuc R2000 IC165 F:
+  company: fanuc
+  model: r2000ic165f
+  robot_type: manipulators
+Fanuc R2000 IC210 F:
+  company: fanuc
+  model: r2000ic210f
+  robot_type: manipulators
+Fanuc R2000 IC210 L:
+  company: fanuc
+  model: r2000ic210l
+  robot_type: manipulators
+Fanuc R2000 IC270 F:
+  company: fanuc
+  model: r2000ic270f
+  robot_type: manipulators
+Franka Robotics Panda:
+  company: frankarobotics
+  model: panda
+  robot_type: manipulators
+Google Barkour V0:
+  company: google
+  model: barkourv0
+  robot_type: quadrupeds
+Google Barkour VB:
+  company: google
+  model: barkourvb
+  robot_type: quadrupeds
+Kuka KR10 R1100 SIXX:
+  company: kuka
+  model: kr10r1100sixx
+  robot_type: manipulators
+Kuka KR10 R1420:
+  company: kuka
+  model: kr10r1420
+  robot_type: manipulators
+Kuka KR10 R9002:
+  company: kuka
+  model: kr10r9002
+  robot_type: manipulators
+Kuka KR120 R2500 PRO:
+  company: kuka
+  model: kr120r2500pro
+  robot_type: manipulators
+Kuka KR150 R31002:
+  company: kuka
+  model: kr150r31002
+  robot_type: manipulators
+Kuka KR1502:
+  company: kuka
+  model: kr1502
+  robot_type: manipulators
+Kuka KR162:
+  company: kuka
+  model: kr162
+  robot_type: manipulators
+Kuka KR210 L150:
+  company: kuka
+  model: kr210l150
+  robot_type: manipulators
+Kuka KR3 R540:
+  company: kuka
+  model: kr3r540
+  robot_type: manipulators
+Kuka KR5 ARC:
+  company: kuka
+  model: kr5arc
+  robot_type: manipulators
+Kuka KR6 R700 SIXX:
+  company: kuka
+  model: kr6r700sixx
+  robot_type: manipulators
+Kuka KR6 R900 SIXX:
+  company: kuka
+  model: kr6r900sixx
+  robot_type: manipulators
+Kuka LBRIIWA14 R820:
+  company: kuka
+  model: lbriiwa14r820
+  robot_type: manipulators
+MITMini Cheetah:
+  company: mit
+  model: minicheetah
+  robot_type: quadrupeds
+MITPupper V3:
+  company: mit
+  model: pupperv3
+  robot_type: quadrupeds
+Motoman BMDA3:
+  company: motoman
+  model: bmda3
+  robot_type: manipulators
+Motoman MH5:
+  company: motoman
+  model: mh5
+  robot_type: manipulators
+Motoman SIA10 D:
+  company: motoman
+  model: sia10d
+  robot_type: manipulators
+Motoman SIA10 F:
+  company: motoman
+  model: sia10f
+  robot_type: manipulators
+Motoman SIA20 D:
+  company: motoman
+  model: sia20d
+  robot_type: manipulators
+Motoman SIA5 D:
+  company: motoman
+  model: sia5d
+  robot_type: manipulators
+Nasa Valkyrie D:
+  company: nasa
+  model: valkyried
+  robot_type: humanoids
+Neura Robotics LARA3:
+  company: neurarobotics
+  model: lara3
+  robot_type: manipulators
+Neura Robotics LARA8:
+  company: neurarobotics
+  model: lara8
+  robot_type: manipulators
+Neura Robotics MAi RA7 M:
+  company: neurarobotics
+  model: maira7m
+  robot_type: manipulators
+Pal Robotics Solo:
+  company: palrobotics
+  model: solo
+  robot_type: quadrupeds
+Pal Robotics Solo12:
+  company: palrobotics
+  model: solo12
+  robot_type: quadrupeds
+Pal Robotics Talos:
+  company: palrobotics
+  model: talos
+  robot_type: humanoids
+Pal Robotics Talos Full V2 Box:
+  company: palrobotics
+  model: talosfullv2box
+  robot_type: humanoids
+Unitree A1:
+  company: unitree
+  model: a1
+  robot_type: quadrupeds
+Unitree Aliengo:
+  company: unitree
+  model: aliengo
+  robot_type: quadrupeds
+Unitree B1:
+  company: unitree
+  model: b1
+  robot_type: quadrupeds
+Unitree B1 Z1:
+  company: unitree
+  model: b1z1
+  robot_type: quadrupeds
+Unitree B2:
+  company: unitree
+  model: b2
+  robot_type: quadrupeds
+Unitree B2 W:
+  company: unitree
+  model: b2w
+  robot_type: quadrupeds
+Unitree G123 DOF:
+  company: unitree
+  model: g123dof
+  robot_type: humanoids
+Unitree G129 DOF:
+  company: unitree
+  model: g129dof
+  robot_type: humanoids
+Unitree G129 DOFLock Waist:
+  company: unitree
+  model: g129doflockwaist
+  robot_type: humanoids
+Unitree G129 DOFWith Hand:
+  company: unitree
+  model: g129dofwithhand
+  robot_type: humanoids
+Unitree GO1:
+  company: unitree
+  model: go1
+  robot_type: quadrupeds
+Unitree GO2:
+  company: unitree
+  model: go2
+  robot_type: quadrupeds
+Unitree GO2 W:
+  company: unitree
+  model: go2w
+  robot_type: quadrupeds
+Unitree H1:
+  company: unitree
+  model: h1
+  robot_type: humanoids
+Unitree H1 With Hand:
+  company: unitree
+  model: h1withhand
+  robot_type: humanoids
+Unitree H12:
+  company: unitree
+  model: h12
+  robot_type: humanoids
+Unitree H12 Handless:
+  company: unitree
+  model: h12handless
+  robot_type: humanoids
+Unitree Z1:
+  company: unitree
+  model: z1
+  robot_type: manipulators
+Universal Robots UR10:
+  company: universalrobots
+  model: ur10
+  robot_type: manipulators
+Universal Robots UR10 E:
+  company: universalrobots
+  model: ur10e
+  robot_type: manipulators
+Universal Robots UR12 E:
+  company: universalrobots
+  model: ur12e
+  robot_type: manipulators
+Universal Robots UR15:
+  company: universalrobots
+  model: ur15
+  robot_type: manipulators
+Universal Robots UR16 E:
+  company: universalrobots
+  model: ur16e
+  robot_type: manipulators
+Universal Robots UR20:
+  company: universalrobots
+  model: ur20
+  robot_type: manipulators
+Universal Robots UR3:
+  company: universalrobots
+  model: ur3
+  robot_type: manipulators
+Universal Robots UR3 E:
+  company: universalrobots
+  model: ur3e
+  robot_type: manipulators
+Universal Robots UR30:
+  company: universalrobots
+  model: ur30
+  robot_type: manipulators
+Universal Robots UR5:
+  company: universalrobots
+  model: ur5
+  robot_type: manipulators
+Universal Robots UR5 E:
+  company: universalrobots
+  model: ur5e
+  robot_type: manipulators
+Universal Robots UR5 With Robotiq2 F85:
+  company: universalrobots
+  model: ur5withrobotiq2f85
+  robot_type: manipulators
+Universal Robots UR7 E:
+  company: universalrobots
+  model: ur7e
+  robot_type: manipulators
