@@ -1,0 +1,6 @@
+{
+    "pylint.args": [
+        "--max-line-length=80"
+    ],
+    "editor.rulers": [80]
+}

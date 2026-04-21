@@ -1,0 +1,8 @@
+/* Add spacing below each function rendered by mkdocstrings */
+.doc.doc-object.doc-function {
+  margin-bottom: 4rem;
+}
+
+.wy-menu-vertical .caption-text {
+    text-transform: none !important;
+}
