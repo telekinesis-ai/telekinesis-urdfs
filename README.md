@@ -13,9 +13,8 @@
   [Telekinesis Examples](https://github.com/telekinesis-ai/telekinesis-examples) | [Telekinesis Data](https://gitlab.com/telekinesis/telekinesis-data)
   <br>
 
-[![PyPI version](https://img.shields.io/pypi/v/telekinesis-urdfs)](https://pypi.org/project/telekinesis-urdfs/)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Python versions](https://img.shields.io/pypi/pyversions/telekinesis-urdfs)](https://pypi.org/project/telekinesis-urdfs/)
+[![Python versions](https://img.shields.io/badge/python-3.11%20|%203.12-blue)](https://www.python.org/)
 
 </div>
 
@@ -47,31 +46,34 @@ This library is used internally by the Telekinesis SDKS and frameworks as the ca
 
 1. Create an isolated environment so that there are no dependency conflicts. We recommend installing `Miniconda` by following instructions from [here](https://docs.conda.io/en/latest/miniconda.html#installing).
 
-2. Create a new `conda` environment called `telekinesis`:
+2. Create a new `conda` environment:
     ```bash
     conda create -n telekinesis-urdfs python=3.11
     ```
+
+    **We currently support Python versions 3.11 and 3.12. Ensure your environment is in one of these Python versions.**
 
 3. Activate the environment:
     ```bash
     conda activate telekinesis-urdfs
     ```
 
-4. Install the package using `pip`:
-
-    **We currently support Python versions 3.11 and 3.12. Ensure your environment is in one of these Python versions.**
-
+4. Clone the repository:
     ```bash
-    pip install telekinesis-urdfs
+    git clone --depth 1 https://github.com/telekinesis-ai/telekinesis-urdfs.git
+    cd telekinesis-urdfs
     ```
 
-    Note: The Python module is called `telekinesis_urdfs`, while the package published on PyPI is `telekinesis-urdfs`.
+5. Install the package:
+    ```bash
+    pip install .
+    ```
 
 ## Example
 
 Run a sample Python script to quickly test your installation.
 
-1. Create a file named `ur10e_loader_example.py` in a directory of your choice and copy paste the below:
+1. Create a file named `urdfs_example.py` in a directory of your choice and copy paste the below:
 
     ```python
     from telekinesis_urdfs import load, load_as_dict

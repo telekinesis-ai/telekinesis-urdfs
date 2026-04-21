@@ -7,10 +7,6 @@
    - [Conda Environment](#conda-environment)
    - [Installation](#installation)
 - [Workflow](#workflow)
-- [Deployment](#deployment)
-   - [Build Package](#build-package)
-   - [Upload to Test PyPI](#upload-to-test-pypi)
-   - [Upload to Main PyPI](#upload-to-main-pypi)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
    - [Format Checks](#format-checks)
@@ -70,12 +66,12 @@ Below is the workflow for this repository:
 │ develop                                         │
 │ Holds next release version                      │
 │ Push: build <version>.devN artifact             │
-│ PR to main: lint + version availability check   │
+│ PR to main: lint validation                     │
 └─────────────────────────────────────────────────┘
                     ↓
 ┌───────────────────── MAIN ──────────────────────┐
 │ main                                            │
-│ Merge: build → test PyPI → verify → PyPI        │
+│ Merge: build → tag release                      │
 │ Post-merge: tag release + bump develop version  │
 └─────────────────────────────────────────────────┘
 ```
@@ -122,20 +118,16 @@ Progress of pipelines can be checked on [GitHub Actions](https://github.com/tele
         - Select source branch `develop` and target branch `main`.
         - Enter title as `feat: release version <version>`.
         - Enable `Squash and merge`.
-        - Wait until the pre-merge checks (lint + version availability) pass.
+        - Wait until the pre-merge lint check passes.
     - On PR to `main`:
-        - Lint and version availability on PyPI are validated.
+        - Lint is validated.
         - Merge succeeds only if the above passes.
 
 3. **Main Branch**
-    - On merge, the full release pipeline runs automatically:
+    - On merge, the release pipeline runs automatically:
         1. Package is built and checked.
-        2. Published to Test PyPI.
-        3. Installation is verified on Python 3.11 and 3.12.
-        4. Published to PyPI.
-        5. Git tag `v<version>` is created and pushed.
-        6. Patch version is bumped on `develop` automatically.
-    - Verify the release on [PyPI](https://pypi.org/project/telekinesis-urdfs/).
+        2. Git tag `v<version>` is created and pushed.
+        3. Patch version is bumped on `develop` automatically.
     - Continue development from `develop` with:
         ```bash
         git checkout develop
@@ -146,127 +138,7 @@ Progress of pipelines can be checked on [GitHub Actions](https://github.com/tele
 Artifacts per branch:
 - Feature — no builds
 - Develop — GitHub Actions artifact `telekinesis-urdfs:<version>.devN`
-- Main — PyPI package `telekinesis-urdfs:<version>`
-
-## Deployment
-**CI is already setup for this package**
-
-Below steps are for **manual** deployment. With CI, ignore the below and refer to the CI setup in Release Management in Telekinesis Archiecture Documentation.
-
-### Build Package
-
-1. Ensure you are in the project directory with the correct conda environment active:
-    ```bash
-    conda activate telekinesis-urdfs
-    cd telekinesis-urdfs
-    ```
-
-2. Change the `version` in `pyproject.toml`. Increment as per the entry in `CHANGELOG.md`.
-
-    Versioning guidelines (`MAJOR.MINOR.PATCH`):
-    - `PATCH` — bug fixes, no API change
-    - `MINOR` — backward-compatible new features
-    - `MAJOR` — breaking API changes
-
-    Additional suffixes:
-    - `devN` for development/unstable versions
-    - `aN`, `bN` for alpha, beta versions
-    - `rcN` for release candidates
-
-    Pip precedence: `0.2.0.dev1 < 0.2.0a1 < 0.2.0b1 < 0.2.0rc1 < 0.2.0`
-
-    **Important: Do NOT reuse a version number once uploaded to PyPI.**
-
-3. Ensure `README.md` and `CHANGELOG.md` are up to date.
-
-4. Ensure `pip` and build tools are upgraded:
-    ```bash
-    python -m pip install --upgrade pip build twine
-    ```
-
-5. Build the package:
-
-    > **Important: Delete previous `dist/` files before building if they exist.**
-
-    ```bash
-    rm -rf dist/ build/ src/*.egg-info
-    python -m build
-    ```
-
-    Expected output:
-    ```
-    Successfully built telekinesis_urdfs-<version>.tar.gz and telekinesis_urdfs-<version>-py3-none-any.whl
-    ```
-
-    Folder `dist/` is created with:
-    ```
-    dist/
-    ├── telekinesis_urdfs-<version>-py3-none-any.whl
-    └── telekinesis_urdfs-<version>.tar.gz
-    ```
-
-### Upload to Test PyPI
-
-1. Upload to Test PyPI. Enter your Test PyPI API token when prompted:
-    ```bash
-    python -m twine upload --repository testpypi dist/*
-    ```
-
-    Expected output:
-    ```
-    Uploading distributions to https://test.pypi.org/legacy/
-    ...
-    View at: https://test.pypi.org/project/telekinesis-urdfs/<version>
-    ```
-
-2. Create a clean test environment:
-    ```bash
-    conda create -n telekinesis-urdfs-test python=3.11
-    conda activate telekinesis-urdfs-test
-    ```
-
-3. Install from Test PyPI, replacing `<version>`:
-    ```bash
-    pip install \
-      --index-url https://test.pypi.org/simple/ \
-      --extra-index-url https://pypi.org/simple \
-      telekinesis-urdfs==<version>
-    ```
-
-4. Verify the installation:
-    ```bash
-    python -c "from telekinesis_urdfs import load; d = load('universalrobotsur10e'); print(d.name)"
-    ```
-
-    Expected output:
-    ```
-    ur10e
-    ```
-
-    > Note: The PyPI package name is `telekinesis-urdfs`. The Python import namespace is `telekinesis_urdfs`.
-
-### Upload to Main PyPI
-
-1. Once Test PyPI verification passes, upload to the main PyPI. Enter your PyPI API token when prompted:
-    ```bash
-    python -m twine upload dist/*
-    ```
-
-    Expected output:
-    ```
-    View at: https://pypi.org/project/telekinesis-urdfs/<version>
-    ```
-
-2. Uninstall the test package and install the live release:
-    ```bash
-    pip uninstall telekinesis-urdfs
-    pip install telekinesis-urdfs==<version>
-    ```
-
-3. Verify by running the example:
-    ```bash
-    python examples/robot_loader.py --robot universalrobotsur10e
-    ```
+- Main — Git tag `v<version>` on GitHub
 
 ## Project Structure
 
@@ -284,9 +156,9 @@ telekinesis-urdfs/
 ├── docs/                        # MkDocs documentation source
 ├── .github/
 │   └── workflows/
-│       ├── verify.yml           # Lint + version checks on pull requests
+│       ├── verify.yml           # Lint checks on pull requests
 │       ├── develop.yml          # Dev build artifact on push to develop
-│       └── release.yml          # Full release pipeline on push to main
+│       └── release.yml          # Build, tag, and bump version on push to main
 ├── CHANGELOG.md
 ├── DEVELOPMENT.md
 ├── pyproject.toml
@@ -355,13 +227,6 @@ telekinesis-urdfs/
     git push
     ```
 
-2. **Version already exists on PyPI**
-
-    The pre-merge check will fail if the version in `pyproject.toml` is already published. Bump the version before merging.
-
-3. **Test PyPI install fails**
-
-    Test PyPI propagation can take a few minutes. The CI pipeline retries up to 3 times automatically. For manual installs, wait a minute and retry.
 
 ## Support
 
