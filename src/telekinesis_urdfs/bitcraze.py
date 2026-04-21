@@ -3,7 +3,7 @@
 from .utils import RobotLoader
 
 
-class CrazyflieCf2xLoader(RobotLoader):
+class BitcrazeCf2xLoader(RobotLoader):
     """Loader for the Bitcraze Crazyflie CF2X quadrotor."""
 
     robot_name = "crazyflie_cf2x"
@@ -15,7 +15,7 @@ class CrazyflieCf2xLoader(RobotLoader):
     free_flyer = True
 
 
-class CrazyflieCf2pLoader(RobotLoader):
+class BitcrazeCf2pLoader(RobotLoader):
     """Loader for the Bitcraze Crazyflie CF2+ quadrotor."""
 
     robot_name = "crazyflie_cf2p"
@@ -27,7 +27,7 @@ class CrazyflieCf2pLoader(RobotLoader):
     free_flyer = True
 
 
-class CrazyflieRacerLoader(RobotLoader):
+class BitcrazeCrazyflieRacerLoader(RobotLoader):
     """Loader for the Bitcraze Crazyflie Racer drone."""
 
     robot_name = "crazyflie_racer"
@@ -39,7 +39,7 @@ class CrazyflieRacerLoader(RobotLoader):
     free_flyer = True
 
 
-class CrazyflieArchitravelLoader(RobotLoader):
+class BitcrazeCrazyflieArchitravelLoader(RobotLoader):
     """Loader for the Bitcraze Crazyflie Architrave fixture."""
 
     robot_name = "crazyflie_architrave"
@@ -51,7 +51,7 @@ class CrazyflieArchitravelLoader(RobotLoader):
     free_flyer = False
 
 
-class CrazyflieBoxLoader(RobotLoader):
+class BitcrazeCrazyflieBoxLoader(RobotLoader):
     """Loader for the Bitcraze Crazyflie Box fixture."""
 
     robot_name = "crazyflie_box"
@@ -64,9 +64,9 @@ class CrazyflieBoxLoader(RobotLoader):
 
 
 __all__ = [
-    "CrazyflieCf2xLoader",
-    "CrazyflieCf2pLoader",
-    "CrazyflieRacerLoader",
-    "CrazyflieArchitravelLoader",
-    "CrazyflieBoxLoader",
+    "BitcrazeCf2xLoader",
+    "BitcrazeCf2pLoader",
+    "BitcrazeCrazyflieRacerLoader",
+    "BitcrazeCrazyflieArchitravelLoader",
+    "BitcrazeCrazyflieBoxLoader",
 ]
