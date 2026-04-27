@@ -47,7 +47,7 @@
       </material>
     </collision>
   </link>
-  <link name="cylinder">
+  <!-- <link name="cylinder">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -86,7 +86,7 @@
         <color rgba="1 1 0 1"/>
       </material>
     </collision>
-  </link>
+  </link> -->
   <link name="link_2">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -229,7 +229,7 @@
     <axis xyz="1 0 0"/>
     <limit effort="0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.3161255787892263"/>
   </joint>
-  <joint name="cylinder_joint" type="revolute">
+  <!-- <joint name="cylinder_joint" type="revolute">
     <origin rpy="0 0 0" xyz="-0.349 -0.194 -0.142"/>
     <parent link="link_1"/>
     <child link="cylinder"/>
@@ -244,7 +244,7 @@
     <axis xyz="0 1 0"/>
     <mimic joint="joint_2" multiplier="0.15"/>
     <limit effort="0" lower="-0.25" upper="0.25" velocity="100"/>
-  </joint>
+  </joint> -->
   <!-- ROS-Industrial 'base' frame: base_link to ABB World Coordinates transform -->
   <link name="base"/>
   <joint name="base_link-base" type="fixed">
