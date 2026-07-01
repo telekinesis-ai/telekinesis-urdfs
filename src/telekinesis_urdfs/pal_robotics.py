@@ -5,6 +5,7 @@ from .utils import RobotLoader
 
 # ── Solo (quadruped) ──────────────────────────────────────────────────────────
 
+
 class PalSoloLoader(RobotLoader):
     """Loader for the PAL Robotics Solo quadruped."""
 
@@ -30,6 +31,7 @@ class PalSolo12Loader(RobotLoader):
 
 
 # ── Talos (humanoid) ──────────────────────────────────────────────────────────
+
 
 class PalTalosFullV2Loader(RobotLoader):
     """Loader for the PAL Robotics Talos full humanoid v2."""
@@ -104,6 +106,7 @@ class PalTalosReducedCorrectedLoader(RobotLoader):
 
 
 # ── Tiago (mobile manipulator) ────────────────────────────────────────────────
+
 
 class PalTiagoLoader(RobotLoader):
     """Loader for the PAL Robotics TIAGo mobile manipulator."""

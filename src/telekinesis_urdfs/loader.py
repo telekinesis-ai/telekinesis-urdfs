@@ -329,9 +329,7 @@ ROBOTS: Dict[str, Type[RobotLoader]] = {
     "palroboticstalosieftarm": PalTalosLeftArmLoader,
     "palroboticstalosreduced": PalTalosReducedLoader,
     "palroboticstalosreducedbox": PalTalosReducedBoxLoader,
-    "palroboticstalosreducedcorrected": (
-        PalTalosReducedCorrectedLoader
-    ),
+    "palroboticstalosreducedcorrected": (PalTalosReducedCorrectedLoader),
     "palroboticstiago": PalTiagoLoader,
     "palroboticstiagodual": PalTiagoDualLoader,
     "palroboticstiagonohand": PalTiagoNoHandLoader,
@@ -353,14 +351,10 @@ ROBOTS: Dict[str, Type[RobotLoader]] = {
     "unitreeg123dofrev10": UnitreeG123dofRev10Loader,
     "unitreeg129dof": UnitreeG129dofLoader,
     "unitreeg129doflockwaist": UnitreeG129dofLockWaistLoader,
-    "unitreeg129doflockwaistrev10": (
-        UnitreeG129dofLockWaistRev10Loader
-    ),
+    "unitreeg129doflockwaistrev10": (UnitreeG129dofLockWaistRev10Loader),
     "unitreeg129dofrev10": UnitreeG129dofRev10Loader,
     "unitreeg129dofwithhand": UnitreeG129dofWithHandLoader,
-    "unitreeg129dofwithhandrev10": (
-        UnitreeG129dofWithHandRev10Loader
-    ),
+    "unitreeg129dofwithhandrev10": (UnitreeG129dofWithHandRev10Loader),
     "unitreeg1dualarm": UnitreeG1DualArmLoader,
     "unitreedex31l": UnitreeDex31LLoader,
     "unitreedex31r": UnitreeDex31RLoader,
@@ -381,12 +375,9 @@ ROBOTS: Dict[str, Type[RobotLoader]] = {
     "universalrobotsur7e": UR7eLoader,
     "universalrobotsur10": UR10Loader,
     "universalrobotsur10e": UR10eLoader,
-    "universalrobotsur10efactorycalibration": (
-        UR10eFactoryCalibrationLoader
-    ),
-    "universalrobotsur10enewfactorycalibration": (
-        UR10eNewFactoryCalibrationLoader
-    ),
+    "universalrobotsur10efactorycalibration": (UR10eFactoryCalibrationLoader),
+    "universalrobotsur10enewfactorycalibration":
+    (UR10eNewFactoryCalibrationLoader),
     "universalrobotsur12e": UR12eLoader,
     "universalrobotsur15": UR15Loader,
     "universalrobotsur16e": UR16eLoader,
@@ -433,9 +424,7 @@ def load(name: str) -> ModelDescription:
     key = name.lower()
     if key not in REGISTRY:
         available = ", ".join(sorted(REGISTRY))
-        raise ValueError(
-            f"Unknown name '{name}'. Available: {available}"
-        )
+        raise ValueError(f"Unknown name '{name}'. Available: {available}")
     desc = REGISTRY[key].get_description()
     if not desc.urdf_path.exists():
         raise FileNotFoundError(f"URDF not found: {desc.urdf_path}")
