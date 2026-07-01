@@ -8,7 +8,7 @@ class Robotiq2F85Loader(ToolLoader):
 
     tool_name = "robotiq_2f_85"
     tool_subdir = "robotiq"
-    urdf_relpath = "urdf/robotiq_2f_85_gripper.urdf"
+    urdf_relpath = "urdf/robotiq_2f_85.urdf"
     srdf_relpath = None
     mesh_relpath = "meshes"
 
@@ -18,17 +18,17 @@ class Robotiq2F140Loader(ToolLoader):
 
     tool_name = "robotiq_2f_140"
     tool_subdir = "robotiq"
-    urdf_relpath = "urdf/robotiq_2f_140_gripper.urdf"
+    urdf_relpath = "urdf/robotiq_2f_140.urdf"
     srdf_relpath = None
     mesh_relpath = "meshes"
 
 
-class Robotiq2F85LegacyLoader(ToolLoader):
-    """Loader for the Robotiq 2F-85 legacy visualization model."""
+class RobotiqHandELoader(ToolLoader):
+    """Loader for the Robotiq Hand-E parallel gripper."""
 
-    tool_name = "robotiq_2f_85_legacy"
-    tool_subdir = "robotiq/robotiq_2f_85_gripper_visualization_old"
-    urdf_relpath = "urdf/robotiq_arg2f_85_model.urdf"
+    tool_name = "robotiq_hande"
+    tool_subdir = "robotiq"
+    urdf_relpath = "urdf/robotiq_hande.urdf"
     srdf_relpath = None
     mesh_relpath = "meshes"
 
@@ -36,5 +36,5 @@ class Robotiq2F85LegacyLoader(ToolLoader):
 __all__ = [
     "Robotiq2F85Loader",
     "Robotiq2F140Loader",
-    "Robotiq2F85LegacyLoader",
+    "RobotiqHandELoader",
 ]

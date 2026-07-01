@@ -183,11 +183,11 @@ from .universal_robots import (
     UR20Loader,
     UR30Loader,
 )
-from .onrobot import OnRobotRg6Loader
+from .onrobot import OnRobotRg2Loader, OnRobotRg6Loader
 from .robotiq import (
     Robotiq2F85Loader,
     Robotiq2F140Loader,
-    Robotiq2F85LegacyLoader,
+    RobotiqHandELoader,
 )
 from .schunk import (
     SchunkEgpLoader,
@@ -396,11 +396,12 @@ ROBOTS: Dict[str, Type[RobotLoader]] = {
 
 TOOLS: Dict[str, Type[ToolLoader]] = {
     # ── OnRobot ───────────────────────────────────────────────────────────────
+    "onrobotrg2": OnRobotRg2Loader,
     "onrobotrg6": OnRobotRg6Loader,
     # ── Robotiq ───────────────────────────────────────────────────────────────
     "robotiq2f85": Robotiq2F85Loader,
     "robotiq2f140": Robotiq2F140Loader,
-    "robotiq2f85legacy": Robotiq2F85LegacyLoader,
+    "robotiqhande": RobotiqHandELoader,
     # ── Schunk ────────────────────────────────────────────────────────────────
     "schunkegp": SchunkEgpLoader,
     "schunkegu50": SchunkEgu50Loader,
