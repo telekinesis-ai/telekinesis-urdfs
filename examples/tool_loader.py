@@ -82,11 +82,7 @@ def print_table(rows: list[tuple[str, utils.ModelDescription]]) -> None:
     sep = "+" + "+".join("-" * (w + 2) for w in widths) + "+"
 
     def fmt_row(cells: tuple[str, ...]) -> str:
-        return (
-            "|"
-            + "|".join(f" {c.ljust(w)} " for c, w in zip(cells, widths))
-            + "|"
-        )
+        return "|" + "|".join(f" {c.ljust(w)} " for c, w in zip(cells, widths)) + "|"
 
     print(f"\n{sep}")
     print(fmt_row(tuple(headers)))
@@ -119,19 +115,14 @@ def show_all() -> None:
     """Display every registered tool grouped by brand, then a table."""
     tools = unique_loaders()
     current_brand = None
-    for tool_name, (_, brand) in sorted(
-        tools.items(), key=lambda x: (x[1][1], x[0])
-    ):
+    for tool_name, (_, brand) in sorted(tools.items(), key=lambda x: (x[1][1], x[0])):
         if brand != current_brand:
             print(f"\n=== {brand.replace('_', ' ').title()} ===")
             current_brand = brand
         print(f"  {tool_name}")
 
     rows = sorted(
-        [
-            (brand, get_tool_description(loader))
-            for _, (loader, brand) in tools.items()
-        ],
+        [(brand, get_tool_description(loader)) for _, (loader, brand) in tools.items()],
         key=lambda r: (r[0], r[1].name),
     )
     print_table(rows)
@@ -148,9 +139,7 @@ def show_brand(brand: str) -> None:
     """
     tools = unique_loaders()
     matches = {
-        tool_name: (loader, b)
-        for tool_name, (loader, b) in tools.items()
-        if b == brand
+        tool_name: (loader, b) for tool_name, (loader, b) in tools.items() if b == brand
     }
     if not matches:
         available = sorted({b for _, b in tools.values()})
@@ -164,10 +153,7 @@ def show_brand(brand: str) -> None:
 
     print(f"=== {brand.replace('_', ' ').title()} ===")
     rows = sorted(
-        [
-            (brand, get_tool_description(loader))
-            for _, (loader, _) in matches.items()
-        ],
+        [(brand, get_tool_description(loader)) for _, (loader, _) in matches.items()],
         key=lambda r: r[1].name,
     )
     print_table(rows)
@@ -201,17 +187,17 @@ def show_tool(tool_key: str) -> None:
 def main() -> None:
     """Parse CLI arguments and dispatch to the appropriate display function."""
     parser = argparse.ArgumentParser(
-        description=(
-            "Load and display tool descriptions from telekinesis_urdfs."
-        ),
+        description=("Load and display tool descriptions from telekinesis_urdfs."),
     )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
-        "--tool", metavar="NAME",
+        "--tool",
+        metavar="NAME",
         help="Key of a single tool (e.g. robotiq2f85, onrobotrg6).",
     )
     group.add_argument(
-        "--brand", metavar="BRAND",
+        "--brand",
+        metavar="BRAND",
         help="Brand to filter by (e.g. robotiq, schunk, onrobot).",
     )
     args = parser.parse_args()

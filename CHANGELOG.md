@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-07-01
+
+### Added
+
+- Robotiq Hand-E gripper loader (`robotiqhande`)
+- OnRobot RG2 gripper loader (`onrobotrg2`)
+- `CONTRIBUTING.md` documenting how to add a robot or tool (folder layout, mesh-path convention, naming, loader registration, xacro flattening)
+
+### Changed
+
+- Standardized tool folder structure (`robotiq`, `onrobot`, `schunk`) to `urdf/` + `meshes/{visual,collision}/<model>/`, with raw ROS/xacro sources under `ros/`
+- Rewrote all gripper `package://` mesh paths to true `example-robot-data/<robots|tools>/...` paths so they resolve with the same rule as robots (no downstream patching/search needed)
+- Renamed Robotiq URDFs to drop the `_gripper` suffix (`robotiq_2f_85.urdf`, `robotiq_2f_140.urdf`) and gave each a unique `<robot name>`
+- Rebuilt the UR5 + Robotiq 2F-85 gripper subtree to use the current 2F-85 mesh set and kinematics
+
+### Fixed
+
+- Corrected Schunk PZV-64 mesh filename typo (`pvz_*` → `pzv_*`)
+
+### Removed
+
+- Robotiq 2F-85 Legacy loader (`robotiq2f85legacy`) and its `robotiq_2f_85_gripper_visualization_old` assets
+
 ## [0.1.0] - 2026-04-17
 
 ### Added

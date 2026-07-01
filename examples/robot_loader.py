@@ -1,4 +1,4 @@
-"""Example demonstrating how to load any robot descriptions from 
+"""Example demonstrating how to load any robot descriptions from
 telekinesis_urdfs.
 
 Supports loading a single robot by name, all robots for a given brand, or
@@ -64,7 +64,12 @@ def print_table(rows: list[tuple[str, utils.ModelDescription]]) -> None:
         rows: List of ``(brand, description)`` tuples, one per robot.
     """
     headers = [
-        "Robot", "Brand", "URDF", "SRDF", "Meshes", "Ref Posture",
+        "Robot",
+        "Brand",
+        "URDF",
+        "SRDF",
+        "Meshes",
+        "Ref Posture",
         "Free Flyer",
     ]
 
@@ -88,11 +93,7 @@ def print_table(rows: list[tuple[str, utils.ModelDescription]]) -> None:
     sep = "+" + "+".join("-" * (w + 2) for w in widths) + "+"
 
     def fmt_row(cells: tuple[str, ...]) -> str:
-        return (
-            "|"
-            + "|".join(f" {c.ljust(w)} " for c, w in zip(cells, widths))
-            + "|"
-        )
+        return "|" + "|".join(f" {c.ljust(w)} " for c, w in zip(cells, widths)) + "|"
 
     print(f"\n{sep}")
     print(fmt_row(tuple(headers)))
@@ -125,9 +126,7 @@ def show_all() -> None:
     """Display every registered robot grouped by brand, then a table."""
     robots = unique_loaders()
     current_brand = None
-    for robot_name, (_, brand) in sorted(
-        robots.items(), key=lambda x: (x[1][1], x[0])
-    ):
+    for robot_name, (_, brand) in sorted(robots.items(), key=lambda x: (x[1][1], x[0])):
         if brand != current_brand:
             print(f"\n=== {brand.replace('_', ' ').title()} ===")
             current_brand = brand
@@ -171,10 +170,7 @@ def show_brand(brand: str) -> None:
 
     print(f"=== {brand.replace('_', ' ').title()} ===")
     rows = sorted(
-        [
-            (brand, get_robot_description(loader))
-            for _, (loader, _) in matches.items()
-        ],
+        [(brand, get_robot_description(loader)) for _, (loader, _) in matches.items()],
         key=lambda r: r[1].name,
     )
     print_table(rows)
@@ -208,17 +204,17 @@ def show_robot(robot_key: str) -> None:
 def main() -> None:
     """Parse CLI arguments and dispatch to the appropriate display function."""
     parser = argparse.ArgumentParser(
-        description=(
-            "Load and display robot descriptions from telekinesis_urdfs."
-        ),
+        description=("Load and display robot descriptions from telekinesis_urdfs."),
     )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
-        "--robot", metavar="NAME",
+        "--robot",
+        metavar="NAME",
         help="Key of a single robot (e.g. universalrobotsur5, abbir2400).",
     )
     group.add_argument(
-        "--brand", metavar="BRAND",
+        "--brand",
+        metavar="BRAND",
         help="Brand to filter by (e.g. abb, fanuc, universal_robots).",
     )
     args = parser.parse_args()
