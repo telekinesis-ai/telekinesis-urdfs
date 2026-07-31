@@ -185,6 +185,7 @@ from .universal_robots import (
     UR30Loader,
 )
 from .onrobot import OnRobotRg2Loader, OnRobotRg6Loader
+from .piab import PiabPicobotElectricLoader
 from .robotiq import (
     Robotiq2F85Loader,
     Robotiq2F140Loader,
@@ -392,6 +393,8 @@ TOOLS: Dict[str, Type[ToolLoader]] = {
     # ── OnRobot ───────────────────────────────────────────────────────────────
     "onrobotrg2": OnRobotRg2Loader,
     "onrobotrg6": OnRobotRg6Loader,
+    # ── Piab ──────────────────────────────────────────────────────────────────
+    "piabpicobotelectric": PiabPicobotElectricLoader,
     # ── Robotiq ───────────────────────────────────────────────────────────────
     "robotiq2f85": Robotiq2F85Loader,
     "robotiq2f140": Robotiq2F140Loader,
