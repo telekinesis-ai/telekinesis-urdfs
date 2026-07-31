@@ -42,6 +42,7 @@ from .bitcraze import (
 )
 from .boston_dynamics import SpotLoader, SpotWithArmLoader
 from .custom_mobile_robots import CustomMobileRobotLoader
+from .epson import EpsonCx4a601sLoader
 from .fanuc import (
     FanucCr35iaLoader,
     FanucCr7iaLoader,
@@ -244,6 +245,8 @@ ROBOTS: Dict[str, Type[RobotLoader]] = {
     "bostondynamicsspotwitharm": SpotWithArmLoader,
     # ── Custom Mobile Robot ──────────────────────────────────────────────────
     "custommobilerobot": CustomMobileRobotLoader,
+    # ── Epson ────────────────────────────────────────────────────────────────
+    "epsoncx4a601s": EpsonCx4a601sLoader,
     # ── Fanuc ────────────────────────────────────────────────────────────────
     "fanuccr35ia": FanucCr35iaLoader,
     "fanuccr7ia": FanucCr7iaLoader,
