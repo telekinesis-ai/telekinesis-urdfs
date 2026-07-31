@@ -2,7 +2,7 @@
 
 Usage (run with Blender's bundled Python):
     blender --background --python convert_glb_fbx_to_meshes.py -- \\
-        --input "src/telekinesis_urdfs/models/example-robot-data/tools/piab/meshes/PCOE.U3.M01.E1.R111PD.X.C.E.XXX v1.fbx" \\
+        --input "src/telekinesis_urdfs/models/example-robot-data/tools/piab/meshes/visual/PCOE.U3.M01.E1.R111PD.X.C.E.XXX v1.fbx" \\
         --output-dir "src/telekinesis_urdfs/models/example-robot-data/tools/piab/meshes" \\
         --name picobot_electric \\
         --collision-ratio 0.1

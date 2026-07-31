@@ -15,11 +15,8 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/tools/piab/meshes/visual/picobot_electric.stl"/>
+        <mesh filename="package://example-robot-data/tools/piab/meshes/visual/piCOBOT for UR.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.8 0.8 0.8 1"/>
-      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -28,10 +25,4 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="picobot_electric_base_link">
-    <mu1>1.0</mu1>
-    <mu2>1.0</mu2>
-    <selfCollide>false</selfCollide>
-    <material>Gazebo/White</material>
-  </gazebo>
 </robot>
