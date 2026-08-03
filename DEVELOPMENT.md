@@ -157,7 +157,8 @@ telekinesis-urdfs/
 ├── examples/
 │   └── robot_loader.py          # CLI example: load by robot name or brand
 ├── scripts/
-│   └── convert_glb_fbx_to_meshes.py  # Blender: FBX/GLB source model -> visual/collision meshes
+│   ├── convert_glb_fbx_to_meshes.py  # Blender: FBX/GLB source model -> visual/collision meshes
+│   └── verify_model.py          # Check a registered model loads and its mesh refs resolve
 ├── docs/                        # MkDocs documentation source
 ├── .github/
 │   └── workflows/
@@ -207,7 +208,7 @@ This produces:
 
 After conversion, author the URDF by hand (referencing the exported mesh paths) and wire up the loader and registry entry as described above. Verify the result with:
 ```bash
-python verify_model.py <registry_key>
+python scripts/verify_model.py <registry_key>
 ```
 
 ## Contributing
@@ -248,7 +249,7 @@ python verify_model.py <registry_key>
 
 4. Run pylint:
     ```bash
-    pylint src/
+    pylint src/ scripts/
     ```
     Expected output:
     ```

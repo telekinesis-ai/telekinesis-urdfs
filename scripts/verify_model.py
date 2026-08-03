@@ -13,6 +13,7 @@ from telekinesis_urdfs.utils import _get_root_model_dir
 
 
 def main() -> int:
+    """Load the given registry key and check its URDF mesh refs resolve."""
     key = sys.argv[1] if len(sys.argv) > 1 else "robotiq2f85"
     d = load(key)  # raises if URDF/SRDF missing
 
@@ -24,7 +25,7 @@ def main() -> int:
         fn = m.get("filename", "")
         if not fn.startswith(prefix):
             missing.append(f"bad prefix: {fn}")
-        elif not (ex_root / fn[len(prefix):]).exists():
+        elif not (ex_root / fn[len(prefix) :]).exists():
             missing.append(f"missing: {fn}")
 
     if missing:

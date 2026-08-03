@@ -2,9 +2,9 @@
 
 Usage (run with Blender's bundled Python):
     blender --background --python convert_glb_fbx_to_meshes.py -- \\
-        --input "src/telekinesis_urdfs/models/example-robot-data/tools/piab/meshes/visual/PCOE.U3.M01.E1.R111PD.X.C.E.XXX v1.fbx" \\
-        --output-dir "src/telekinesis_urdfs/models/example-robot-data/tools/piab/meshes" \\
-        --name picobot_electric \\
+        --input "<path-to-source>.fbx" \\
+        --output-dir "<path-to-tool>/meshes" \\
+        --name <model_name> \\
         --collision-ratio 0.1
 """
 
@@ -14,7 +14,7 @@ import argparse
 import sys
 from pathlib import Path
 
-import bpy
+import bpy  # pylint: disable=import-error
 
 
 def _script_args() -> list[str]:
@@ -26,11 +26,13 @@ def _script_args() -> list[str]:
 
 
 def clear_scene() -> None:
+    """Remove all objects from the current Blender scene."""
     bpy.ops.object.select_all(action="SELECT")
     bpy.ops.object.delete(use_global=False)
 
 
 def import_model(input_path: Path) -> None:
+    """Import an FBX or GLB/GLTF file into the current scene."""
     suffix = input_path.suffix.lower()
 
     if suffix == ".fbx":
@@ -42,7 +44,9 @@ def import_model(input_path: Path) -> None:
 
 
 def prepare_meshes() -> None:
-    mesh_objects = [obj for obj in bpy.context.scene.objects if obj.type == "MESH"]
+    """Bake rotation/scale into mesh data for every imported mesh object."""
+    scene_objects = bpy.context.scene.objects
+    mesh_objects = [obj for obj in scene_objects if obj.type == "MESH"]
 
     if not mesh_objects:
         raise RuntimeError("No mesh objects found in imported file")
@@ -62,7 +66,9 @@ def prepare_meshes() -> None:
 
 
 def join_meshes(name: str) -> bpy.types.Object:
-    mesh_objects = [obj for obj in bpy.context.scene.objects if obj.type == "MESH"]
+    """Join every mesh object in the scene into one, renamed to ``name``."""
+    scene_objects = bpy.context.scene.objects
+    mesh_objects = [obj for obj in scene_objects if obj.type == "MESH"]
 
     bpy.ops.object.select_all(action="DESELECT")
 
@@ -78,6 +84,7 @@ def join_meshes(name: str) -> bpy.types.Object:
 
 
 def export_visual_stl(output_path: Path) -> None:
+    """Export the currently selected object as a visual STL mesh."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     bpy.ops.wm.stl_export(
@@ -88,16 +95,19 @@ def export_visual_stl(output_path: Path) -> None:
 
 
 def _collada_export_available() -> bool:
+    """Return whether the Collada exporter operator is registered."""
     if hasattr(bpy.types, "WM_OT_collada_export"):
         return True
     try:
         bpy.ops.preferences.addon_enable(module="io_scene_dae")
-    except Exception:
+    except (RuntimeError, ModuleNotFoundError):
+        # Addon isn't bundled/installed; caller falls back to skipping DAE.
         pass
     return hasattr(bpy.types, "WM_OT_collada_export")
 
 
 def export_visual_dae(output_path: Path) -> None:
+    """Export the currently selected object as a visual DAE mesh, if able."""
     if not _collada_export_available():
         print(
             "Skipping DAE export: Collada exporter is not available in this "
@@ -120,6 +130,7 @@ def create_collision_mesh(
     name: str,
     ratio: float,
 ) -> bpy.types.Object:
+    """Create a decimated copy of ``source_object`` for collision geometry."""
     collision = source_object.copy()
     collision.data = source_object.data.copy()
     collision.name = name
@@ -145,6 +156,7 @@ def export_collision_stl(
     collision_object: bpy.types.Object,
     output_path: Path,
 ) -> None:
+    """Export ``collision_object`` as a collision STL mesh."""
     bpy.ops.object.select_all(action="DESELECT")
     collision_object.select_set(True)
     bpy.context.view_layer.objects.active = collision_object
@@ -159,6 +171,7 @@ def export_collision_stl(
 
 
 def main() -> None:
+    """Parse CLI args and run the FBX/GLB -> mesh conversion pipeline."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True)
     parser.add_argument("--output-dir", required=True)
