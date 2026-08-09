@@ -42,6 +42,7 @@ from .bitcraze import (
 )
 from .boston_dynamics import SpotLoader, SpotWithArmLoader
 from .custom_mobile_robots import CustomMobileRobotLoader
+from .epson import EpsonCx4a601sLoader
 from .fanuc import (
     FanucCr35iaLoader,
     FanucCr7iaLoader,
@@ -184,6 +185,7 @@ from .universal_robots import (
     UR30Loader,
 )
 from .onrobot import OnRobotRg2Loader, OnRobotRg6Loader
+from .piab import PiabPicobotElectricLoader
 from .robotiq import (
     Robotiq2F85Loader,
     Robotiq2F140Loader,
@@ -244,6 +246,8 @@ ROBOTS: Dict[str, Type[RobotLoader]] = {
     "bostondynamicsspotwitharm": SpotWithArmLoader,
     # ── Custom Mobile Robot ──────────────────────────────────────────────────
     "custommobilerobot": CustomMobileRobotLoader,
+    # ── Epson ────────────────────────────────────────────────────────────────
+    "epsoncx4a601s": EpsonCx4a601sLoader,
     # ── Fanuc ────────────────────────────────────────────────────────────────
     "fanuccr35ia": FanucCr35iaLoader,
     "fanuccr7ia": FanucCr7iaLoader,
@@ -389,6 +393,8 @@ TOOLS: Dict[str, Type[ToolLoader]] = {
     # ── OnRobot ───────────────────────────────────────────────────────────────
     "onrobotrg2": OnRobotRg2Loader,
     "onrobotrg6": OnRobotRg6Loader,
+    # ── Piab ──────────────────────────────────────────────────────────────────
+    "piabpicobotelectric": PiabPicobotElectricLoader,
     # ── Robotiq ───────────────────────────────────────────────────────────────
     "robotiq2f85": Robotiq2F85Loader,
     "robotiq2f140": Robotiq2F140Loader,

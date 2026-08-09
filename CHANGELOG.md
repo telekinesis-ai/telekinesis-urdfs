@@ -5,7 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.0] - 2026-08-03
+
+### Added
+
+- Epson CX4-A601S robot loader (`epsoncx4a601s`)
+- Piab piCOBOT Electric vacuum gripper loader (`piabpicobotelectric`)
+- `scripts/convert_glb_fbx_to_meshes.py` — Blender utility to convert an FBX/GLB source model into visual/collision meshes
+- "Adding a New Model" section in `DEVELOPMENT.md` documenting the mesh-conversion workflow
+
+### Changed
+
+- Moved `verify_model.py` to `scripts/verify_model.py`
 
 ## [0.1.1] - 2026-07-01
 
