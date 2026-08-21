@@ -9,7 +9,7 @@ class EpsonCx4a601sLoader(RobotLoader):
     robot_name = "epson_cx4a601s"
     robot_subdir = "epson/cx4a601s_description"
     urdf_relpath = "urdf/cx4a601s.urdf"
-    srdf_relpath = None
+    srdf_relpath = "srdf/epson_robot.srdf"
     mesh_relpath = "meshes"
     ref_posture = None
     free_flyer = False
