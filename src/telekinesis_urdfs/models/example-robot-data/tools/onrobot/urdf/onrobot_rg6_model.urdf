@@ -217,14 +217,14 @@
     <parent link="onrobot_rg6_base_link"/>
     <child link="left_outer_knuckle"/>
     <axis xyz="-1 0 0"/>
-    <limit effort="1000" lower="-0.628319" upper="0.628319" velocity="2.0"/>
+    <limit effort="50" lower="-0.628319" upper="0.628319" velocity="2.0"/>
   </joint>
   <joint name="left_inner_knuckle_joint" type="revolute">
     <origin rpy="0 0 0.0" xyz="0 -0.01272 0.159500"/>
     <parent link="onrobot_rg6_base_link"/>
     <child link="left_inner_knuckle"/>
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="-0.628319" upper="0.628319" velocity="2.0"/>
+    <limit effort="50" lower="-0.628319" upper="0.628319" velocity="2.0"/>
     <mimic joint="finger_joint" multiplier="-1" offset="0"/>
   </joint>
   <joint name="left_inner_finger_joint" type="revolute">
@@ -232,7 +232,7 @@
     <parent link="left_outer_knuckle"/>
     <child link="left_inner_finger"/>
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="-0.872665" upper="0.872665" velocity="2.0"/>
+    <limit effort="50" lower="-0.872665" upper="0.872665" velocity="2.0"/>
     <mimic joint="finger_joint" multiplier="1" offset="0"/>
   </joint>
   <joint name="right_outer_knuckle_joint" type="revolute">
@@ -240,7 +240,7 @@
     <parent link="onrobot_rg6_base_link"/>
     <child link="right_outer_knuckle"/>
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="-0.628319" upper="0.628319" velocity="2.0"/>
+    <limit effort="50" lower="-0.628319" upper="0.628319" velocity="2.0"/>
     <mimic joint="finger_joint" multiplier="-1" offset="0"/>
   </joint>
   <joint name="right_inner_knuckle_joint" type="revolute">
@@ -248,7 +248,7 @@
     <parent link="onrobot_rg6_base_link"/>
     <child link="right_inner_knuckle"/>
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="-0.628319" upper="0.628319" velocity="2.0"/>
+    <limit effort="50" lower="-0.628319" upper="0.628319" velocity="2.0"/>
     <mimic joint="finger_joint" multiplier="-1" offset="0"/>
   </joint>
   <joint name="right_inner_finger_joint" type="revolute">
@@ -256,7 +256,7 @@
     <parent link="right_outer_knuckle"/>
     <child link="right_inner_finger"/>
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="-0.872665" upper="0.872665" velocity="2.0"/>
+    <limit effort="50" lower="-0.872665" upper="0.872665" velocity="2.0"/>
     <mimic joint="finger_joint" multiplier="1" offset="0"/>
   </joint>
   <transmission name="finger_joint_trans">
